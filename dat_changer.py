@@ -2,16 +2,8 @@ from datetime import datetime, timedelta #импортирууем модуль 
 current_datetime = datetime.now() # текущая дата со временем, вплоть до миллисекунд
 created_date=current_datetime.date() # присвоение переменной толькко даты без времени
 issue_date=created_date + timedelta(days=1) # присвоение переменной даты с прибавкой 1 дня
-
-
-username=('Sasuke')
-print("ваше имя - ",username)
-print('введите заголовок заметки')
-title=('дела на день') # Ввод заголовка
-print('название заголовкка - ',title)
-content=('сделать дела, которы давно надо сделать')
-print('ваше описание заметкки - ', content)
-status=('в работе')
-print('статус заметки', status)
-print('дата создания заметки: ',created_date)
-print('дата закрытия заметки: ', issue_date)
+str_date=str(created_date)
+print('просто дата', str_date)
+print('дата без года', str_date[5:10])
+print('дата без дня', str_date[0:7])
+print('дата без месяца и года', str_date[8:10])
