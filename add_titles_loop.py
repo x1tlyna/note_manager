@@ -3,12 +3,14 @@ current_datetime = datetime.now()
 
 
 username=input('введите имя пользователя: ') #ввод имени пользователя
-count=1
+title=1
 
 notes=[] # пустой список для заметок
 
-while count != 'стоп' and count != '':
-    title=input('введите заголовок заметки: ')
+while True:
+    title=input("введите заголовок заметки: (напишите 'стоп' или нажмите 'enter' для завершения) ")
+    if title == 'стоп' or title == '':
+        break
     content=input('введите пункты заметки (пункты вводить через запятую): ')
     status=input('введите статус заметки: ')
     created_date=current_datetime.date()
@@ -23,7 +25,7 @@ while count != 'стоп' and count != '':
         'срок выполнения заметки': issue_date.strftime('%d-%m-%Y')
     }
     notes.append(note) # добавления словаря в список
-    count = input("создать еще заметку? (напишите 'стоп' или нажмите 'enter' для завершения): ")
+    #count = input("создать еще заметку? (напишите 'стоп' или нажмите 'enter' для завершения): ")
 print("ваши заметки:")
 for note in notes: #вывод всех получившихся заметок
    print(f"Имя: {note['имя']}, Заголовок: {note['заголовок']}, Пункты: {note['пункты']}, "
