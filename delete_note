@@ -3,9 +3,6 @@ from datetime import datetime, timedelta
 current_datetime = datetime.now()
 
 
-
-#int(input('сколько заметок Вы хотите создать?:'))
-
 notes=[] # пустой список для заметок
 def create_note():
     while True:
@@ -47,10 +44,6 @@ def table_note():
     if not notes:
         print("Заметок пока нет.")
         return
-
-    # Заголовок таблицы
-    print(f"{'Имя':<15} {'Заголовок':<20} {'Пункты':<30} {'Статус':<10} {'Дата':<12} {'Срок':<12}")
-    print("-" * 110)  # Разделительная линия
 
     # Вывод всех заметок
     for note in notes:
